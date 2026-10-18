@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>باي بلس | PayPulse - تطبيق المحفظة الرقمية والمدفوعات اللحظية الذكية</title>
+  <meta name="description" content="تطبيق هواتف ذكية متكامل للخدمات المصرفية والمدفوعات الفورية (iOS & Android) مبني بتقنيات Flutter الحديثة مع ربط إنستاباي والبطاقات الافتراضية.">
+  <meta name="theme-color" content="#07090e">
+
+  <!-- Google Fonts: Cairo & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Showcase Top Navbar -->
+  <header class="showcase-header">
+    <div class="header-container">
+      <div class="brand-badge">
+        <div class="brand-icon">⚡</div>
+        <div class="brand-info">
+          <h1>باي بلس | PayPulse</h1>
+          <span>Smart Fintech & Digital Wallet Mobile App</span>
+        </div>
+      </div>
+
+      <div class="header-meta">
+        <div class="dev-contact-chip">
+          <span>مطور التطبيق:</span>
+          <strong>م. محمد أبو حلوة (01112277792)</strong>
+        </div>
+
+        <a href="../../index.html" class="back-link">
+          <span>← العودة للبورتفليو الرئيسي</span>
+        </a>
+
+        <a href="https://wa.me/201112277792?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%A8%D8%B4%D9%85%D9%87%D9%86%D8%AF%D8%B3%20%D9%85%D8%AD%D9%85%D8%AF%D8%8C%20%D8%B4%D8%A7%D9%87%D8%AF%D8%AA%20%D9%86%D9%85%D9%88%D8%B0%D8%AC%20%D8%AA%D8%B7%D8%A8%D9%8A%D9%82%20%D8%A7%D9%84%D9%85%D9%88%D8%A8%D8%A7%D9%8A%D9%84%20(PayPulse)%20%D9%88%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%AA%D9%86%D9%81%D9%8A%D8%B0%20%D8%AA%D8%B7%D8%A8%D9%8A%D9%82%20%D9%85%D8%B4%D8%A7%D8%A8%D9%87%20%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%D9%8A" target="_blank" rel="noopener" class="btn-hire">
+          <span>اطلب تطبيق موبايل لمشروعك</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 2.98.97 4.29L2 22l5.88-.94C9.14 21.66 10.53 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Showcase Stage -->
+  <main class="showcase-stage">
+    
+    <!-- Left Column: Technical Context & App Architecture -->
+    <div class="app-description-side">
+      <span class="pill-tag">📱 تطبيقات الهواتف الذكية • Flutter & Native Architecture</span>
+      
+      <h2 class="stage-title">
+        تطبيق المحفظة الرقمية والمدفوعات الذكية <span>PayPulse</span>
+      </h2>
+
+      <p class="stage-desc">
+        تطبيق للهواتف الذكية (iOS & Android) يعكس معايير التطبيقات المصرفية العالمية والتكنولوجيا المالية (FinTech). تم تصميمه بواجهات عصرية بأسلوب النيوبانك (Neobank)، مع محاكاة كاملة لمنظومة التحويل اللحظي (InstaPay)، إصدار وإدارة البطاقات الرقمية الافتراضية، الأمان البيومتري (Face ID)، والتحليلات المالية المتقدمة.
+      </p>
+
+      <div class="features-grid">
+        <div class="feat-card">
+          <div class="feat-icon">⚡</div>
+          <div class="feat-info">
+            <h4>تحويل لحظي فوري (InstaPay)</h4>
+            <p>إرسال واستقبال الأموال خلال ثوانٍ برقم الهاتف أو عنوان الدفع اللحظي IPA مع إشعار Dynamic Island فوري.</p>
+          </div>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-icon">💳</div>
+          <div class="feat-info">
+            <h4>بطاقات فيزا افتراضية 3D</h4>
+            <p>كارت فيزا رقمي تفاعلي مع إمكانية التجميد اللحظي، كشف الأرقام، وتعديل حد الشراء اليومي بسلاسة.</p>
+          </div>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-icon">🔐</div>
+          <div class="feat-info">
+            <h4>توثيق بيومتري ذكي (Face ID)</h4>
+            <p>محاكاة واقعية لتأكيد العمليات الحساسة بمسح الوجه البيومتري وتشفير البيانات الحساسة.</p>
+          </div>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-icon">📊</div>
+          <div class="feat-info">
+            <h4>تحليلات وتقسيم المصاريف</h4>
+            <p>رسم بياني دائري لتصنيف النفقات (مطاعم، تسوق، فواتير، ترفيه) ونصائح ذكية لتوفير الميزانية.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tech-stack-row">
+        <span class="tech-badge">Flutter & Dart</span>
+        <span class="tech-badge">iOS & Android Ready</span>
+        <span class="tech-badge">InstaPay API & Webhooks</span>
+        <span class="tech-badge">Face ID / Biometrics</span>
+        <span class="tech-badge">Interactive 3D Glassmorphism</span>
+        <span class="tech-badge">State Management (Bloc / Riverpod)</span>
+      </div>
+    </div>
+
+    <!-- Right Column: Interactive iPhone 16 Pro Frame -->
+    <div class="phone-mockup-container">
+      <div class="iphone-frame">
+        <div class="iphone-screen">
+          
+          <!-- iPhone Status Bar & Dynamic Island -->
+          <div class="iphone-status-bar">
+            <span class="status-time">9:41</span>
+            
+            <div class="dynamic-island" id="dynamicIsland">
+              <span class="island-camera"></span>
+              <span class="island-notification-text" id="islandNotifText">PayPulse Active</span>
+            </div>
+
+            <div class="status-icons">
+              <span>5G</span>
+              <span>100%</span>
+            </div>
+          </div>
+
+          <!-- Phone Inner App Screen Container -->
+          <div class="app-screen-body">
+            
+            <!-- SCREEN 1: HOME DASHBOARD -->
+            <div class="app-tab-page active" id="page-home">
+              
+              <!-- App Top User Bar -->
+              <div class="app-user-bar">
+                <div class="user-info-group">
+                  <div class="user-avatar">م</div>
+                  <div class="user-text">
+                    <small>صباح الخير،</small>
+                    <strong>محمد أبو حلوة</strong>
+                  </div>
+                </div>
+
+                <div class="app-icon-btn">
+                  🔔
+                  <span class="notif-dot"></span>
+                </div>
+              </div>
+
+              <!-- Balance Banner -->
+              <div class="wallet-balance-card">
+                <div class="balance-header">
+                  <span>إجمالي الرصيد المتاح</span>
+                  <button class="toggle-eye-btn" id="toggleEyeBtn" title="إخفاء / إظهار الرصيد">👁️</button>
+                </div>
+                <div class="balance-amount" id="balanceDisplay">
+                  48,750.50 <small>ج.م</small>
+                </div>
+                <div class="balance-footer">
+                  <span>↗ +4,200 ج.م هذا الشهر (عائد استثمار)</span>
+                </div>
+              </div>
+
+              <!-- Quick Action Circles -->
+              <div class="quick-actions-row">
+                <button class="action-item" id="actionQuickSend">
+                  <div class="action-circle">💸</div>
+                  <span>تحويل فوري</span>
+                </button>
+                <button class="action-item">
+                  <div class="action-circle">📥</div>
+                  <span>إيداع</span>
+                </button>
+                <button class="action-item" id="actionQuickCard">
+                  <div class="action-circle">💳</div>
+                  <span>بطاقاتي</span>
+                </button>
+                <button class="action-item">
+                  <div class="action-circle">🧾</div>
+                  <span>فواتير</span>
+                </button>
+              </div>
+
+              <!-- Interactive Holographic Virtual Card -->
+              <div class="virtual-card-wrapper">
+                <div class="virtual-visa-card" id="virtualVisaCard">
+                  <div class="card-hologram-glow"></div>
+                  
+                  <div class="card-top">
+                    <div class="card-chip"></div>
+                    <span class="card-type">VISA PLATINUM</span>
+                  </div>
+
+                  <div class="card-number" id="cardVisualNumber">
+                    •••• •••• •••• 9842
+                  </div>
+
+                  <div class="card-bottom">
+                    <div>
+                      <span class="card-holder">MOHAMED ABO HELWA</span>
+                    </div>
+                    <span class="card-expiry">09/29</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Recent Activity List -->
+              <div class="section-header-row">
+                <h3>أحدث المعاملات</h3>
+                <a href="#" class="see-all-link">عرض الكل</a>
+              </div>
+
+              <div class="activity-list" id="homeTransactionsList">
+                <div class="trans-item">
+                  <div class="trans-lead">
+                    <div class="trans-icon-box" style="background:rgba(16,185,129,0.15); color:#10b981;">
+                      ↓
+                    </div>
+                    <div class="trans-text">
+                      <strong>تحويل وارد عبر إنستاباي</strong>
+                      <small>اليوم 10:14 ص • شريف كمال</small>
+                    </div>
+                  </div>
+                  <span class="trans-amount incoming">+2,800.00 ج.م</span>
+                </div>
+
+                <div class="trans-item">
+                  <div class="trans-lead">
+                    <div class="trans-icon-box" style="background:rgba(244,63,94,0.15); color:#f43f5e;">
+                      🛒
+                    </div>
+                    <div class="trans-text">
+                      <strong>مشتريات سوبرماركت سعودي</strong>
+                      <small>أمس 08:30 م • فيزا بلاتينيوم</small>
+                    </div>
+                  </div>
+                  <span class="trans-amount outgoing">-640.50 ج.م</span>
+                </div>
+
+                <div class="trans-item">
+                  <div class="trans-lead">
+                    <div class="trans-icon-box" style="background:rgba(56,189,248,0.15); color:#38bdf8;">
+                      ⚡
+                    </div>
+                    <div class="trans-text">
+                      <strong>فاتورة إنترنت منزلي وي (WE)</strong>
+                      <small>14 أكتوبر • فوري إلكتروني</small>
+                    </div>
+                  </div>
+                  <span class="trans-amount outgoing">-380.00 ج.م</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- SCREEN 2: INSTAPAY SEND MONEY -->
+            <div class="app-tab-page" id="page-send">
+              <div class="instapay-header-banner">
+                <span class="instapay-badge-icon">⚡</span>
+                <div class="instapay-banner-text">
+                  <strong>التحويل اللحظي عبر إنستاباي (InstaPay)</strong>
+                  <small>تحويل مباشر لأي حساب بنكي أو محفظة ذكية في مصر</small>
+                </div>
+              </div>
+
+              <!-- Quick Contacts Tray -->
+              <div class="contacts-tray">
+                <span class="tray-title">جهات الاتصال المتكررة:</span>
+                <div class="contacts-scroll">
+                  <button class="contact-avatar-btn selected" data-name="أحمد الشناوي" data-phone="0102 941 8820">
+                    <div class="avatar-circle">أ</div>
+                    <span>أحمد الشناوي</span>
+                  </button>
+                  <button class="contact-avatar-btn" data-name="سارة محمود" data-phone="0111 832 9940">
+                    <div class="avatar-circle">س</div>
+                    <span>سارة محمود</span>
+                  </button>
+                  <button class="contact-avatar-btn" data-name="محمد فريد" data-phone="0128 554 9012">
+                    <div class="avatar-circle">م</div>
+                    <span>محمد فريد</span>
+                  </button>
+                  <button class="contact-avatar-btn" data-name="د. طارق" data-phone="0106 312 4470">
+                    <div class="avatar-circle">ط</div>
+                    <span>د. طارق</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Recipient Input -->
+              <div class="input-group-phone">
+                <label>رقم الهاتف أو عنوان الدفع (IPA / Mobile):</label>
+                <input type="text" class="phone-field" id="sendRecipientInput" value="أحمد الشناوي (0102 941 8820)">
+              </div>
+
+              <!-- Amount Box -->
+              <div class="amount-keypad-box">
+                <div class="amount-input-visual" id="sendAmountVisual">
+                  500 ج.م
+                </div>
+
+                <div class="chips-presets">
+                  <span class="chip-amount" data-val="100">100 ج.م</span>
+                  <span class="chip-amount" data-val="500">500 ج.م</span>
+                  <span class="chip-amount" data-val="1000">1,000 ج.م</span>
+                  <span class="chip-amount" data-val="2500">2,500 ج.م</span>
+                </div>
+              </div>
+
+              <button class="btn-send-now" id="sendNowBtn">
+                <span>تأكيد والتحويل الفوري عبر Face ID</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                  <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                </svg>
+              </button>
+            </div>
+
+            <!-- SCREEN 3: VIRTUAL CARDS & SECURITY -->
+            <div class="app-tab-page" id="page-cards">
+              <div class="section-header-row" style="margin-top:0.5rem;">
+                <h3>إدارة البطاقات الافتراضية</h3>
+                <span style="font-size:0.75rem; color:#38bdf8;">+ بطاقة جديدة</span>
+              </div>
+
+              <!-- Miniature Card Preview -->
+              <div class="virtual-card-wrapper" style="margin-bottom:1rem;">
+                <div class="virtual-visa-card" style="height:140px; padding:1rem;">
+                  <div class="card-top">
+                    <div class="card-chip" style="width:28px; height:20px;"></div>
+                    <span class="card-type" style="font-size:0.9rem;">VISA PLATINUM</span>
+                  </div>
+                  <div class="card-number" style="font-size:0.95rem;">
+                    •••• •••• •••• 9842
+                  </div>
+                  <div class="card-bottom">
+                    <span class="card-holder" style="font-size:0.65rem;">MOHAMED ABO HELWA</span>
+                    <span class="card-expiry" style="font-size:0.7rem;">09/29</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Security Switches -->
+              <div class="card-control-switch">
+                <div class="switch-label">
+                  <strong>تجميد البطاقة مؤقتاً</strong>
+                  <small>إيقاف جميع المعاملات فحصاً وفورياً للحماية</small>
+                </div>
+                <div class="toggle-slider" id="freezeCardToggle">
+                  <div class="toggle-knob"></div>
+                </div>
+              </div>
+
+              <div class="card-control-switch">
+                <div class="switch-label">
+                  <strong>الشراء عبر الإنترنت (E-Commerce)</strong>
+                  <small>السماح بالشراء بالعملات المحلية والأجنبية</small>
+                </div>
+                <div class="toggle-slider active" id="onlineShopToggle">
+                  <div class="toggle-knob"></div>
+                </div>
+              </div>
+
+              <!-- Limit Slider -->
+              <div class="limit-slider-box">
+                <div class="title-row">
+                  <span>حد الصرف اليومي:</span>
+                  <span class="limit-val" id="cardLimitValue">15,000 ج.م</span>
+                </div>
+                <input type="range" class="range-slider" id="cardLimitSlider" min="1000" max="50000" step="1000" value="15000">
+              </div>
+            </div>
+
+            <!-- SCREEN 4: SPENDING ANALYTICS -->
+            <div class="app-tab-page" id="page-analytics">
+              <div class="analytics-hero-card">
+                <div class="chart-ring-visual">
+                  <div class="chart-center-hole">
+                    <span>إجمالي النفقات</span>
+                    <strong>8,420 ج.م</strong>
+                  </div>
+                </div>
+
+                <div class="category-breakdown">
+                  <div class="category-row">
+                    <div>
+                      <span class="cat-bullet" style="background:#38bdf8;"></span>
+                      <span>مطاعم وكافيهات</span>
+                    </div>
+                    <strong>3,100 ج.م (37%)</strong>
+                  </div>
+
+                  <div class="category-row">
+                    <div>
+                      <span class="cat-bullet" style="background:#a855f7;"></span>
+                      <span>تسوق ومشتريات</span>
+                    </div>
+                    <strong>2,400 ج.م (28%)</strong>
+                  </div>
+
+                  <div class="category-row">
+                    <div>
+                      <span class="cat-bullet" style="background:#10b981;"></span>
+                      <span>فواتير والتزامات شهرية</span>
+                    </div>
+                    <strong>1,820 ج.م (22%)</strong>
+                  </div>
+
+                  <div class="category-row">
+                    <div>
+                      <span class="cat-bullet" style="background:#f59e0b;"></span>
+                      <span>صحة وصيدليات</span>
+                    </div>
+                    <strong>1,100 ج.م (13%)</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Biometric Face ID Modal Simulator -->
+          <div class="biometric-modal-overlay" id="biometricModal">
+            <div class="face-id-scanner">
+              👤
+            </div>
+            <div class="bio-status-text" id="bioStatusText">
+              جاري التحقق عبر Face ID...
+            </div>
+            <div class="bio-sub">
+              المصادقة البيومترية الآمنة لمعاملات إنستاباي
+            </div>
+          </div>
+
+          <!-- iPhone Bottom App Navigation Bar -->
+          <div class="iphone-bottom-nav">
+            <button class="nav-phone-item active" data-tab="home">
+              <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+              <span>الرئيسية</span>
+            </button>
+
+            <button class="nav-phone-item" data-tab="send">
+              <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+              <span>تحويل فوري</span>
+            </button>
+
+            <button class="nav-phone-item" data-tab="cards">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+              <span>بطاقاتي</span>
+            </button>
+
+            <button class="nav-phone-item" data-tab="analytics">
+              <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
+              <span>تحليلات</span>
+            </button>
+
+            <div class="home-indicator"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

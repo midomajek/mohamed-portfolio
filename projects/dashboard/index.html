@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>نوفا كلاود | NOVA Smart AI & CRM Business Suite</title>
+  <meta name="description" content="منظومة سحابية ذكية للأنشطة التجارية في مصر لإدارة المبيعات، حجوزات العملاء، وأتمتة الردود على واتساب بالذكاء الاصطناعي مع الفاتورة والإيصال الإلكتروني.">
+  <meta name="theme-color" content="#0b1120">
+
+  <!-- Google Fonts: Cairo & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-theme">
+
+  <!-- Top System Status Strip -->
+  <div class="system-status-strip">
+    <div class="container-fluid strip-inner">
+      <div class="status-left">
+        <span class="pulse-dot"></span>
+        <span>الخوادم السحابية وخدمة Meta WhatsApp Cloud API: <strong>متصلة وتعمل بكفاءة 99.98%</strong></span>
+        <span class="divider">|</span>
+        <span>معتمد ومربوط مع منظومة الفاتورة والإيصال الإلكتروني (مصلحة الضرائب المصرية ETA)</span>
+      </div>
+      <div class="status-right">
+        <span>مطور المنظومة: <strong>م. محمد أبو حلوة (01112277792)</strong></span>
+        <a href="../../index.html" class="back-portfolio-link">← العودة لمعرض الأعمال</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="app-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="app-sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="app-brand">
+          <div class="brand-logo-glow">⚡</div>
+          <div class="brand-names">
+            <span class="app-name">نوفا كلاود</span>
+            <span class="app-sub">NOVA AI & CRM SUITE</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Active Workspace Selector (Egypt) -->
+      <div class="workspace-card">
+        <span class="ws-label">النشاط التجاري النشط:</span>
+        <div class="ws-selector">
+          <span class="ws-icon">🏥</span>
+          <div>
+            <strong>مجمع النور الطبي التخصصي</strong>
+            <small>الفرع الرئيسي • التجمع الخامس - القاهرة</small>
+          </div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <button class="nav-tab active" data-tab="analytics">
+          <span class="tab-icon">📊</span>
+          <span>لوحة المؤشرات العامة</span>
+        </button>
+
+        <button class="nav-tab" data-tab="ai-chat">
+          <span class="tab-icon">🤖</span>
+          <span>محاكي شات بوت واتساب</span>
+          <span class="nav-badge live">مباشر</span>
+        </button>
+
+        <button class="nav-tab" data-tab="crm">
+          <span class="tab-icon">👥</span>
+          <span>إدارة العملاء والحجوزات</span>
+          <span class="nav-badge count" id="crmBadgeCount">8</span>
+        </button>
+
+        <button class="nav-tab" data-tab="invoices">
+          <span class="tab-icon">💳</span>
+          <span>الفوترة وبوابات الدفع</span>
+        </button>
+
+        <button class="nav-tab" data-tab="ai-settings">
+          <span class="tab-icon">⚙️</span>
+          <span>إعدادات وتدريب الذكاء الاصطناعي</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="dev-profile-chip">
+          <div class="avatar-mini">M</div>
+          <div class="profile-info">
+            <strong>م. محمد أبو حلوة</strong>
+            <small>Lead Digital Architect</small>
+          </div>
+        </div>
+        <a href="https://wa.me/201112277792?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%A8%D8%B4%D9%85%D9%87%D9%86%D8%AF%D8%B3%20%D9%85%D8%AD%D9%85%D8%AF%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AA%D8%B7%D9%88%D9%8A%D8%B1%20%D9%85%D9%86%D8%B8%D9%88%D9%85%D8%A9%20%D8%A5%D8%AF%D8%A7%D8%B1%D9%8A%D8%A9%20%D9%88%D8%B4%D8%A7%D8%AA%20%D8%A8%D9%88%D8%AA%20%D9%84%D9%86%D8%B4%D8%A7%D8%B7%D9%8A%20%D9%81%D9%8A%20%D9%85%D8%B5%D8%B1" target="_blank" rel="noopener" class="btn btn-consult-dev">
+          <span>طلب نظام مخصص لمشروعك</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 2.98.97 4.29L2 22l5.88-.94C9.14 21.66 10.53 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/>
+          </svg>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Stage -->
+    <main class="app-main-stage">
+      
+      <!-- Top Action Bar -->
+      <header class="stage-topbar">
+        <div class="topbar-welcome">
+          <h1>لوحة العمليات والذكاء الاصطناعي 🚀</h1>
+          <p class="subtitle">مراقبة لحظية لحجوزات العملاء، محادثات الواتساب المؤتمتة، والمدفوعات الإلكترونية بالجنيه المصري</p>
+        </div>
+
+        <div class="topbar-actions">
+          <div class="time-filter-pill">
+            <span class="active">هذا الشهر</span>
+            <span>آخر 7 أيام</span>
+            <span>اليوم</span>
+          </div>
+
+          <button class="btn btn-primary-glass" id="triggerNewDemoLead">
+            <span>+ تجربة وصول عميل جديد</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- TAB 1: EXECUTIVE ANALYTICS -->
+      <section class="tab-content active" id="tab-analytics">
+        
+        <!-- KPI Cards Grid (EGP Currency) -->
+        <div class="kpi-grid">
+          
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-title">إجمالي المبيعات المؤكدة</span>
+              <span class="kpi-trend up">+24.2% ↗</span>
+            </div>
+            <div class="kpi-value" id="kpiRevenue">685,400 <small>ج.م</small></div>
+            <div class="kpi-progress-bar">
+              <div class="fill" style="width: 82%;"></div>
+            </div>
+            <span class="kpi-footer-note">مقارنة بـ 552,000 ج.م الشهر الماضي</span>
+          </div>
+
+          <div class="kpi-card highlight-glow">
+            <div class="kpi-header">
+              <span class="kpi-title">محادثات AI المكتملة عبر واتساب</span>
+              <span class="kpi-trend up">+36.8% ↗</span>
+            </div>
+            <div class="kpi-value" id="kpiChats">2,410 <small>محادثة</small></div>
+            <div class="kpi-progress-bar">
+              <div class="fill" style="width: 95%;"></div>
+            </div>
+            <span class="kpi-footer-note">تم الرد وإغلاق 95% بدون تدخل بشري</span>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-title">الحجوزات والصفقات المؤكدة</span>
+              <span class="kpi-trend up">+18.5% ↗</span>
+            </div>
+            <div class="kpi-value" id="kpiBookings">342 <small>حجزاً مسجلاً</small></div>
+            <div class="kpi-progress-bar">
+              <div class="fill" style="width: 74%;"></div>
+            </div>
+            <span class="kpi-footer-note">متوسط قيمة التذكرة: 2,004 ج.م</span>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-title">متوسط سرعة استجابة الروبوت</span>
+              <span class="kpi-trend neutral">فوري ⚡</span>
+            </div>
+            <div class="kpi-value">0.8 <small>ثانية</small></div>
+            <div class="kpi-progress-bar">
+              <div class="fill" style="width: 99%;"></div>
+            </div>
+            <span class="kpi-footer-note">مدعوم بـ OpenAI GPT-4o & Meta Cloud</span>
+          </div>
+
+        </div>
+
+        <!-- Split Grid: Live Activity & Visual Distribution -->
+        <div class="dashboard-split-grid">
+          
+          <!-- Live Activity Feed -->
+          <div class="card-glass activity-card">
+            <div class="card-header-flex">
+              <h3>⚡ سجل العمليات الفورية المؤتمتة</h3>
+              <span class="live-pulse-badge">مباشر الآن</span>
+            </div>
+
+            <div class="activity-timeline" id="activityFeed">
+              <div class="activity-item">
+                <div class="act-icon bot">🤖</div>
+                <div class="act-details">
+                  <strong>بوت الذكاء الاصطناعي أكد موعداً جديداً</strong>
+                  <p>العميل: م. شريف الدسوقي • عيادة زراعة وتجميل الأسنان • غداً 05:00 م (فرع التجمع)</p>
+                </div>
+                <span class="act-time">منذ 3 دقائق</span>
+              </div>
+
+              <div class="activity-item">
+                <div class="act-icon pay">💳</div>
+                <div class="act-details">
+                  <strong>دفع إلكتروني فوري ناجح عبر إنستاباي (InstaPay)</strong>
+                  <p>تم استلام دفعة مقدمة (2,800 ج.م) لجلسة تبييض ليزر Zoom4</p>
+                </div>
+                <span class="act-time">منذ 11 دقيقة</span>
+              </div>
+
+              <div class="activity-item">
+                <div class="act-icon msg">💬</div>
+                <div class="act-details">
+                  <strong>موافقة تقسيط فوري عبر فاليو (valU)</strong>
+                  <p>العميلة: سارة محمود • تم تقسيط باقة التقويم الشفاف على 12 شهر بدون فوائد</p>
+                </div>
+                <span class="act-time">منذ 24 دقيقة</span>
+              </div>
+
+              <div class="activity-item">
+                <div class="act-icon invoice">📑</div>
+                <div class="act-details">
+                  <strong>إصدار إيصال إلكتروني معتمد بمنظومة الضرائب المصرية (ETA)</strong>
+                  <p>إيصال إلكتروني مبسط رقم #ETA-EG-84920 بقيمة 4,500 ج.م</p>
+                </div>
+                <span class="act-time">منذ 40 دقيقة</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Interactive Control Widget -->
+          <div class="card-glass control-card">
+            <div class="card-header-flex">
+              <h3>🤖 محاكي تجربة العميل المباشر</h3>
+              <button class="btn btn-xs btn-outline" id="switchToChatBtn">فتح نافذة الشات الكاملة ←</button>
+            </div>
+            
+            <p class="quick-desc">جرب إرسال رسالة تجريبية لتشاهد كيف يقوم شات بوت الذكاء الاصطناعي بالرد اللحظي والتسجيل في النظام:</p>
+
+            <div class="quick-chat-prompts">
+              <button class="prompt-chip" data-query="كم سعر تبييض الأسنان بالليزر وهل متاح تقسيط مع فاليو؟">
+                💬 "كم سعر تبييض الأسنان بالليزر ومتاح تقسيط فاليو؟"
+              </button>
+              <button class="prompt-chip" data-query="هل تقبلون كروت تأمين أكسا أو أليانز مصر؟">
+                🩺 "هل تقبلون تأمين أكسا مصر أو أليانز؟"
+              </button>
+              <button class="prompt-chip" data-query="عايز أحجز كشف استشاري بكرة في فرع التجمع الخامس">
+                📅 "عايز أحجز كشف بكرة في فرع التجمع الخامس"
+              </button>
+            </div>
+
+            <div class="bot-preview-box">
+              <div class="bot-msg-header">
+                <span class="bot-avatar">🤖</span>
+                <strong>مساعد مجمع النور الذكي (NOVA Egypt Agent)</strong>
+                <span class="online-indicator">متصل</span>
+              </div>
+              <div class="bot-preview-bubble" id="quickBotReply">
+                أهلاً بحضرتك! أنا المساعد الذكي لمجمع النور الطبي التخصصي بالقاهرة. كيف يمكنني مساعدتك اليوم بخصوص الأسنان أو الجلدية أو مواعيد الكشف؟
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- TAB 2: LIVE AI WHATSAPP SIMULATOR -->
+      <section class="tab-content" id="tab-ai-chat">
+        <div class="chat-simulator-container">
+          
+          <div class="chat-info-side">
+            <span class="badge-pill-cyan">محاكي محادثات واتساب التفاعلي (مصر)</span>
+            <h2>شات بوت ذكاء اصطناعي يفهم اللهجة المصرية ويرد كأنه موظف خبير</h2>
+            <p>
+              تم تدريب هذا النموذج ليتعامل مع استفسارات الأسعار بالجنيه المصري، التحقق من شركات التأمين الطبي المعتمدة بمصر، حجز المواعيد في جدول الطبيب، وإرسال روابط الدفع المباشر عبر إنستاباي وفاليو وفودافون كاش دون أن تفقد أي عميل.
+            </p>
+
+            <div class="chat-features-list">
+              <div class="feat-item">
+                <span class="icon">⚡</span>
+                <div>
+                  <strong>استجابة فورية 24/7</strong>
+                  <p>لا ينتظر العميل ساعات للرد، بل يحصل على الإجابة الدقيقة والترحيب اللائق خلال ثانية واحدة.</p>
+                </div>
+              </div>
+
+              <div class="feat-item">
+                <span class="icon">🎯</span>
+                <div>
+                  <strong>فهم اللهجة المصرية الدارجة ومصطلحات الحجز</strong>
+                  <p>يفهم الكلمات العامية المصرية بدقة عالية ويستخلص منها نية الحجز والخدمة الطبية المطلوبة فوراً.</p>
+                </div>
+              </div>
+
+              <div class="feat-item">
+                <span class="icon">📑</span>
+                <div>
+                  <strong>تسجيل وتحديث فوري في قاعدة البيانات</strong>
+                  <p>كل موعد يتم تأكيده في المحادثة ينزل فوراً في جدول العملاء وقسم الحجوزات ولوحة المتابعة.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="test-prompts-tray">
+              <span class="lbl">انقر لتجربة أسئلة جاهزة:</span>
+              <div class="chips-flex">
+                <button class="test-chip" data-msg="السلام عليكم، عندكم تقسيط مع فاليو أو سهولة؟">
+                  "عندكم تقسيط مع فاليو أو سهولة؟"
+                </button>
+                <button class="test-chip" data-msg="عندي وجع شديد في ضرسي ومحتاج كشف طوارئ النهاردة في التجمع">
+                  "محتاج كشف طوارئ النهاردة بالتجمع"
+                </button>
+                <button class="test-chip" data-msg="فين عنوان المركز بالظبط في القاهرة؟">
+                  "فين عنوان المركز بالظبط في القاهرة؟"
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Realistic Phone Mockup Interface -->
+          <div class="phone-mockup-wrapper">
+            <div class="phone-device">
+              <div class="phone-speaker"></div>
+              
+              <!-- WhatsApp Screen Header -->
+              <div class="wa-screen-header">
+                <div class="wa-contact-info">
+                  <div class="wa-avatar">
+                    <img src="../../assets/portfolio/avatar.jpg" alt="NOVA Bot">
+                  </div>
+                  <div>
+                    <strong class="wa-name">مجمع النور الطبي 🟢</strong>
+                    <small class="wa-status" id="waTypingStatus">حساب أعمال موثق • متصل الآن</small>
+                  </div>
+                </div>
+                <div class="wa-actions">
+                  <span>📞</span>
+                  <span>⋮</span>
+                </div>
+              </div>
+
+              <!-- Chat Message History -->
+              <div class="wa-messages-body" id="waMessagesContainer">
+                
+                <div class="wa-msg incoming">
+                  <div class="bubble">
+                    أهلاً بحضرتك في مجمع النور الطبي التخصصي (فرعي التجمع الخامس والمهندسين) 🦷✨
+                    أنا مساعدك الذكي الافتراضي. كيف يمكنني خدمتك اليوم بخصوص الاستفسار عن الأسعار أو حجز موعد كشف؟
+                    <span class="wa-time">10:42 ص ✓✓</span>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Chat Input Bar -->
+              <form class="wa-input-bar" id="waChatForm">
+                <input type="text" id="waInputText" placeholder="اكتب رسالتك هنا للتجربة..." autocomplete="off">
+                <button type="submit" class="wa-send-btn" id="waSendBtn">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                  </svg>
+                </button>
+              </form>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- TAB 3: CRM LEADS & BOOKINGS -->
+      <section class="tab-content" id="tab-crm">
+        <div class="card-glass table-card">
+          
+          <div class="table-top-toolbar">
+            <div class="toolbar-title">
+              <h3>سجل العملاء والحجوزات المؤتمتة</h3>
+              <p>متابعة فورية للعملاء المحتملين الذين تفاعلوا مع الذكاء الاصطناعي أو حجزوا عبر الموقع في فروع مصر.</p>
+            </div>
+
+            <div class="toolbar-controls">
+              <div class="search-box">
+                <input type="text" id="leadSearchInput" placeholder="بحث بالاسم أو رقم الهاتف...">
+              </div>
+
+              <select id="statusFilterSelect" class="filter-dropdown">
+                <option value="all">جميع الحالات</option>
+                <option value="confirmed">موعد مؤكد</option>
+                <option value="ai-followup">متابعة الذكاء الاصطناعي</option>
+                <option value="paid">تم السداد</option>
+                <option value="new">عميل جديد</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="responsive-table-wrap">
+            <table class="crm-table">
+              <thead>
+                <tr>
+                  <th>اسم العميل</th>
+                  <th>رقم الهاتف</th>
+                  <th>الخدمة المطلوبة</th>
+                  <th>تاريخ وتوقيت الموعد</th>
+                  <th>الحالة</th>
+                  <th>القيمة التقديرية</th>
+                  <th>الإجراء السريع</th>
+                </tr>
+              </thead>
+              <tbody id="crmTableBody">
+                <tr data-status="confirmed">
+                  <td>
+                    <div class="client-cell">
+                      <div class="initial-avatar">ش</div>
+                      <strong>م. شريف كمال الدسوقي</strong>
+                    </div>
+                  </td>
+                  <td dir="ltr">0102 941 8820</td>
+                  <td>ابتسامة هوليوود (إيماكس ألماني)</td>
+                  <td>غداً • 06:00 م (التجمع)</td>
+                  <td><span class="status-tag confirmed">✓ موعد مؤكد</span></td>
+                  <td>18,500 ج.م</td>
+                  <td>
+                    <a href="https://wa.me/201112277792?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%A8%D8%B4%D9%85%D9%87%D9%86%D8%AF%D8%B3%20%D8%B4%D8%B1%D9%8A%D9%81%D8%8C%20%D9%86%D8%A4%D9%83%D8%AF%20%D9%85%D9%88%D8%B9%D8%AF%20%D8%AD%D8%B6%D8%B1%D8%AA%D9%83%20%D8%BA%D8%AF%D8%A7%D9%8B%20%D8%A8%D9%81%D8%B1%D8%B9%20%D8%A7%D9%84%D8%AA%D8%AC%D9%85%D8%B9" target="_blank" class="btn btn-xs btn-outline">واتساب</a>
+                  </td>
+                </tr>
+
+                <tr data-status="ai-followup">
+                  <td>
+                    <div class="client-cell">
+                      <div class="initial-avatar">س</div>
+                      <strong>أ. سارة محمود عزت</strong>
+                    </div>
+                  </td>
+                  <td dir="ltr">0111 832 9940</td>
+                  <td>التقويم الشفاف إنفزلاين</td>
+                  <td>بانتظار تأكيد العميل</td>
+                  <td><span class="status-tag followup">🤖 متابعة AI مستمرة</span></td>
+                  <td>14,000 ج.م</td>
+                  <td>
+                    <button class="btn btn-xs btn-outline change-status-btn" data-name="سارة محمود">تحديث الحالة</button>
+                  </td>
+                </tr>
+
+                <tr data-status="paid">
+                  <td>
+                    <div class="client-cell">
+                      <div class="initial-avatar">ط</div>
+                      <strong>د. طارق عبدالحميد</strong>
+                    </div>
+                  </td>
+                  <td dir="ltr">0128 554 9012</td>
+                  <td>زراعة أسنان فورية سويسرية</td>
+                  <td>الخميس • 04:30 م (المهندسين)</td>
+                  <td><span class="status-tag paid">💳 تم الدفع (إنستاباي)</span></td>
+                  <td>9,500 ج.م</td>
+                  <td>
+                    <a href="#tab-invoices" class="btn btn-xs btn-outline jump-invoice-btn" data-client="د. طارق عبدالحميد" data-amount="9500">عرض الفاتورة</a>
+                  </td>
+                </tr>
+
+                <tr data-status="new">
+                  <td>
+                    <div class="client-cell">
+                      <div class="initial-avatar">ر</div>
+                      <strong>أ. ريم محمد فريد</strong>
+                    </div>
+                  </td>
+                  <td dir="ltr">0106 312 4470</td>
+                  <td>تبييض الأسنان بالليزر Zoom4</td>
+                  <td>اليوم • 07:00 م (التجمع)</td>
+                  <td><span class="status-tag new">★ عميل جديد</span></td>
+                  <td>2,800 ج.م</td>
+                  <td>
+                    <button class="btn btn-xs btn-primary confirm-lead-btn" data-name="ريم محمد فريد">تأكيد الحجز</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- TAB 4: INVOICING & PAYMENT GATEWAY (EGYPT ETA) -->
+      <section class="tab-content" id="tab-invoices">
+        <div class="invoicing-grid">
+          
+          <!-- Generator Form -->
+          <div class="card-glass invoice-form-card">
+            <h3>📑 إصدار فاتورة / إيصال إلكتروني فوري</h3>
+            <p>متوافقة مع متطلبات منظومة الفاتورة والإيصال الإلكتروني لمصلحة الضرائب المصرية (ETA).</p>
+
+            <form id="invoiceForm">
+              <div class="form-row-duo">
+                <div class="f-group">
+                  <label for="invClient">اسم العميل / المراجع *</label>
+                  <input type="text" id="invClient" value="م. شريف كمال الدسوقي" required>
+                </div>
+                <div class="f-group">
+                  <label for="invService">الخدمة الطبية / البند *</label>
+                  <input type="text" id="invService" value="جلسة تبييض أسنان احترافي 3D + تنظيف" required>
+                </div>
+              </div>
+
+              <div class="form-row-duo">
+                <div class="f-group">
+                  <label for="invAmount">المبلغ الإجمالي شامل الضريبة (ج.م) *</label>
+                  <input type="number" id="invAmount" value="2800" required>
+                </div>
+                <div class="f-group">
+                  <label for="invPaymentMethod">طريقة السداد المعتمدة *</label>
+                  <select id="invPaymentMethod">
+                    <option value="إنستاباي (InstaPay التحويل اللحظي)">إنستاباي (InstaPay التحويل اللحظي)</option>
+                    <option value="تقسيط فاليو (valU حتى 60 شهر)">تقسيط فاليو (valU حتى 60 شهر)</option>
+                    <option value="بطاقة بنكية / كروت ميزة (Meeza / Visa / Master)">بطاقة بنكية / كروت ميزة (Meeza / Visa / Master)</option>
+                    <option value="فودافون كاش ومحافظ إلكترونية (Smart Wallets)">فودافون كاش ومحافظ إلكترونية (Smart Wallets)</option>
+                    <option value="فوري (Fawry Pay)">فوري (Fawry Pay)</option>
+                    <option value="تأمين طبي معتمد (AXA / Allianz / MetLife)">تأمين طبي معتمد (AXA / Allianz / MetLife)</option>
+                  </select>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">
+                <span>توليد الإيصال الإلكتروني ورمز الضرائب المصرية (ETA QR)</span>
+              </button>
+            </form>
+          </div>
+
+          <!-- Live Invoice Preview Paper -->
+          <div class="invoice-paper-card">
+            <div class="invoice-paper">
+              <div class="inv-head">
+                <div class="inv-brand-side">
+                  <h4>مجمع النور الطبي التخصصي (ش.م.م)</h4>
+                  <small>رقم التسجيل الضريبي: 492-819-204</small>
+                  <small>سجل تجاري: 184920 استثمار القاهرة</small>
+                  <small>ترخيص وزارة الصحة: 2024-MOH-EG-9182</small>
+                </div>
+                <div class="inv-qr-box">
+                  <!-- Simulated SVG QR Code for ETA Egypt -->
+                  <svg viewBox="0 0 100 100" width="70" height="70" fill="#000">
+                    <rect width="100" height="100" fill="#fff"/>
+                    <rect x="10" y="10" width="25" height="25" fill="#000"/>
+                    <rect x="15" y="15" width="15" height="15" fill="#fff"/>
+                    <rect x="65" y="10" width="25" height="25" fill="#000"/>
+                    <rect x="70" y="15" width="15" height="15" fill="#fff"/>
+                    <rect x="10" y="65" width="25" height="25" fill="#000"/>
+                    <rect x="15" y="70" width="15" height="15" fill="#fff"/>
+                    <rect x="45" y="20" width="10" height="20" fill="#000"/>
+                    <rect x="40" y="50" width="20" height="10" fill="#000"/>
+                    <rect x="65" y="65" width="20" height="20" fill="#000"/>
+                  </svg>
+                  <span class="qr-lbl">ETA Compliant (Egypt)</span>
+                </div>
+              </div>
+
+              <div class="inv-meta-row">
+                <div><span>رقم الإيصال:</span> <strong id="invNumberDisplay">#ETA-EG-98241</strong></div>
+                <div><span>التاريخ:</span> <strong id="invDateDisplay">2026-10-18</strong></div>
+              </div>
+
+              <div class="inv-client-info">
+                <span>إيصال صادر إلى:</span>
+                <strong id="invClientDisplay">م. شريف كمال الدسوقي</strong>
+              </div>
+
+              <table class="inv-items-table">
+                <thead>
+                  <tr>
+                    <th>الوصف</th>
+                    <th>السعر الأساسي</th>
+                    <th>ض.ق.م (14%)</th>
+                    <th>الإجمالي</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td id="invServiceDisplay">جلسة تبييض أسنان احترافي 3D + تنظيف</td>
+                    <td id="invBaseDisplay">2,456.14 ج.م</td>
+                    <td id="invVatDisplay">343.86 ج.م</td>
+                    <td id="invTotalDisplay" class="total-cell">2,800.00 ج.م</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="inv-footer-strip">
+                <div><span>طريقة السداد:</span> <strong id="invMethodDisplay">إنستاباي / InstaPay</strong></div>
+                <div><span class="paid-stamp">✓ مدفوعة بالكامل</span></div>
+              </div>
+
+              <div class="inv-actions-row">
+                <button class="btn btn-xs btn-outline" onclick="window.print()">🖨️ طباعة الفاتورة</button>
+                <a href="https://wa.me/201112277792?text=%D8%A5%D9%8A%D8%B5%D8%A7%D9%84%20%D8%B6%D8%B1%D9%8A%D8%A8%D9%8A%20%D9%85%D9%86%20%D9%85%D9%86%D8%B8%D9%88%D9%85%D8%A9%20%D9%86%D9%88%D9%81%D8%A7%20%D9%83%D9%84%D8%A7%D9%88%D8%AF%20%D9%85%D8%B5%D8%B1" target="_blank" class="btn btn-xs btn-outline">إرسال للعميل عبر واتساب</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- TAB 5: AI BRAIN SETTINGS -->
+      <section class="tab-content" id="tab-ai-settings">
+        <div class="card-glass ai-settings-card">
+          <div class="settings-header">
+            <h3>🧠 إعدادات وتدريب شخصية الذكاء الاصطناعي (AI Prompt & Memory)</h3>
+            <p>تخصيص نبرة الحديث باللهجة المصرية، سياسة الخصومات، والتعليمات الصارمة التي يتبعها الروبوت أثناء محادثة العملاء على واتساب.</p>
+          </div>
+
+          <div class="settings-form-grid">
+            <div class="set-group">
+              <label>شخصية ونبرة الروبوت (Persona & Tone):</label>
+              <select id="botToneSelect">
+                <option value="polite">مرحب، احترافي، ولهجة مصرية راقية ومحترمة (تناسب عيادات القاهرة الجديدة والشيخ زايد)</option>
+                <option value="sales">بيعي نشط يركز على إغلاق الحجز وتأكيد الموعد فوراً</option>
+                <option value="medical">طبي واستشاري دقيق يشرح الإجراءات الطبية باحترافية</option>
+              </select>
+            </div>
+
+            <div class="set-group">
+              <label>سياسة منح الخصومات التلقائية:</label>
+              <select id="botDiscountSelect">
+                <option value="limit10">السماح بخصم لا يتجاوز 10% فقط عند تردد العميل</option>
+                <option value="freeExam">عرض كشف واستشارة مجانية عند حجز أي إجراء علاجي فوق 2,000 ج.م</option>
+                <option value="none">ممنوع إعطاء أي خصم إضافي غير العروض المعلنة</option>
+              </select>
+            </div>
+
+            <div class="set-group full-width">
+              <label>التعليمات المخصصة للروبوت (System Prompt):</label>
+              <textarea rows="4" class="custom-prompt-area" id="botSystemPrompt">أنت المساعد الذكي الرسمي لمجمع النور الطبي بالقاهرة الجديدة (فرعي التجمع الخامس والمهندسين). تحدث بلباقة واحترافية راقية. ساعد المرضى في معرفة أسعار جلسات الأسنان والجلدية وعروض التقسيط مع فاليو، واشرح لهم قبول كروت التأمين الكبرى (أكسا، أليانز، متلايف، بوبا مصر)، ورتب لهم المواعيد في جدول الأطباء.</textarea>
+            </div>
+
+            <div class="set-actions">
+              <button class="btn btn-primary" id="saveAiSettingsBtn">
+                <span>حفظ التعديلات وتحديث الروبوت فوراً</span>
+              </button>
+              <span class="save-status-msg" id="saveMsg"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

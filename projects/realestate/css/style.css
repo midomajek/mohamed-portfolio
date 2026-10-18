@@ -1,0 +1,1287 @@
+/* ==========================================================================
+   ORYX PRIVATE ESTATES - LUXURY ARCHITECTURAL LANDING PAGE STYLESHEET
+   Aesthetics: Deep Obsidian, Champagne Gold, Glassmorphism, Architectural Grid
+   ========================================================================== */
+
+:root {
+  --bg-primary: #070a0f;
+  --bg-surface: #0d131e;
+  --bg-surface-elevated: rgba(18, 25, 38, 0.75);
+  --bg-glass: rgba(255, 255, 255, 0.03);
+  --bg-glass-card: rgba(16, 23, 35, 0.65);
+  
+  --gold-primary: #d4af37;
+  --gold-light: #f5e7b2;
+  --gold-dark: #a67c1e;
+  --gold-gradient: linear-gradient(135deg, #f7eac0 0%, #d4af37 50%, #996f13 100%);
+  --gold-glow: rgba(212, 175, 55, 0.22);
+  --gold-border: rgba(212, 175, 55, 0.28);
+  
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-gold: rgba(212, 175, 55, 0.35);
+
+  --font-arabic: 'Cairo', system-ui, -apple-system, sans-serif;
+  --font-display: 'Cinzel', serif;
+  --font-en: 'Outfit', sans-serif;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body.estate-theme {
+  font-family: var(--font-arabic);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  direction: rtl;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1260px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* Ambient Orbs */
+.gold-glow-orb {
+  position: absolute;
+  width: 650px;
+  height: 650px;
+  border-radius: 50%;
+  filter: blur(140px);
+  pointer-events: none;
+  z-index: 0;
+}
+.gold-glow-orb.top-right {
+  top: -150px;
+  right: -200px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, transparent 70%);
+}
+.gold-glow-orb.bottom-left {
+  top: 1400px;
+  left: -200px;
+  background: radial-gradient(circle, rgba(166, 124, 30, 0.09) 0%, transparent 70%);
+}
+
+/* Typography Helpers */
+.gold-gradient-text {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-weight: 800;
+}
+
+.gold-pill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 1.1rem;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid var(--gold-border);
+  color: var(--gold-light);
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  margin-bottom: 3.5rem;
+}
+.section-title.text-center {
+  text-align: center;
+}
+.section-title h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+.section-title p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  max-width: 620px;
+  margin-inline: auto;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-family: var(--font-arabic);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: none;
+  outline: none;
+}
+.btn-sm {
+  padding: 0.55rem 1.25rem;
+  font-size: 0.85rem;
+  border-radius: var(--radius-sm);
+}
+.btn-lg {
+  padding: 0.95rem 2rem;
+  font-size: 1rem;
+  border-radius: var(--radius-md);
+}
+.btn-block {
+  width: 100%;
+}
+
+.btn-gold-solid {
+  background: var(--gold-gradient);
+  color: #0c0f14;
+  font-weight: 700;
+  box-shadow: 0 4px 20px var(--gold-glow);
+}
+.btn-gold-solid:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.35);
+  filter: brightness(1.05);
+}
+
+.btn-gold-outline {
+  background: rgba(212, 175, 55, 0.05);
+  border: 1px solid var(--border-gold);
+  color: var(--gold-light);
+}
+.btn-gold-outline:hover {
+  background: rgba(212, 175, 55, 0.15);
+  border-color: var(--gold-primary);
+}
+
+.btn-glass-gold {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+}
+.btn-glass-gold:hover {
+  border-color: var(--border-gold);
+  color: var(--gold-light);
+  background: rgba(212, 175, 55, 0.08);
+}
+
+/* ==========================================================================
+   Header & Navigation
+   ========================================================================== */
+.estate-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(7, 10, 15, 0.85);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  padding: 1rem 0;
+  transition: all var(--transition-fast);
+}
+
+.header-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.estate-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+}
+.brand-monogram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+.brand-arabic {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+.brand-english {
+  font-family: var(--font-en);
+  font-size: 0.65rem;
+  color: var(--gold-primary);
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.estate-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+.estate-nav .nav-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+  position: relative;
+}
+.estate-nav .nav-link:hover {
+  color: var(--gold-light);
+}
+
+.header-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.mobile-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+.mobile-toggle span {
+  width: 24px;
+  height: 2px;
+  background: var(--gold-primary);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.estate-hero {
+  position: relative;
+  padding: 5rem 0 4rem;
+  z-index: 1;
+}
+
+.hero-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.08fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.luxury-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 1rem;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-full);
+  color: var(--gold-light);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+.luxury-badge .sparkle {
+  color: var(--gold-primary);
+}
+
+.hero-headline {
+  font-size: 2.85rem;
+  line-height: 1.28;
+  font-weight: 800;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.5px;
+}
+
+.hero-description {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.hero-cta-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+.btn-arrow {
+  display: inline-block;
+  transition: transform var(--transition-fast);
+}
+.btn-gold-solid:hover .btn-arrow {
+  transform: translateX(-4px);
+}
+
+.estate-metrics-bar {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--bg-glass-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(12px);
+}
+.metric-block .val {
+  display: block;
+  font-family: var(--font-en);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--gold-light);
+}
+.metric-block .lbl {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+.estate-metrics-bar .divider {
+  width: 1px;
+  height: 38px;
+  background: var(--border-subtle);
+}
+
+/* Hero Media Column */
+.hero-visual-side {
+  position: relative;
+}
+.hero-frame-container {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-gold);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 35px var(--gold-glow);
+}
+.hero-main-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: opacity 0.5s ease-in-out, transform 0.6s ease;
+}
+.hero-main-img:hover {
+  transform: scale(1.02);
+}
+
+.frame-glass-badge {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 1.15rem;
+  background: rgba(7, 10, 15, 0.75);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(12px);
+  z-index: 2;
+}
+.frame-glass-badge .badge-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 10px #10b981;
+}
+.frame-glass-badge strong {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+}
+.frame-glass-badge small {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--gold-light);
+}
+
+.floating-ambiance-chips {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  left: 1.25rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  z-index: 2;
+}
+.chip-btn {
+  background: rgba(7, 10, 15, 0.85);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-family: var(--font-arabic);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-fast);
+}
+.chip-btn:hover, .chip-btn.active {
+  background: rgba(212, 175, 55, 0.25);
+  border-color: var(--gold-primary);
+  color: var(--gold-light);
+}
+
+/* ==========================================================================
+   Villa & Floor Plan Configurator
+   ========================================================================== */
+.villas-configurator-section {
+  padding: 6rem 0;
+  position: relative;
+  background: linear-gradient(180deg, var(--bg-primary) 0%, #0b1019 100%);
+}
+
+.villas-tab-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2.75rem;
+  flex-wrap: wrap;
+}
+.villas-tab-nav .tab-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.85rem 1.75rem;
+  background: var(--bg-glass-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: var(--font-arabic);
+}
+.villas-tab-nav .tab-btn .tab-en {
+  font-family: var(--font-en);
+  font-size: 0.72rem;
+  letter-spacing: 1.5px;
+  color: var(--gold-primary);
+  margin-bottom: 0.2rem;
+}
+.villas-tab-nav .tab-btn .tab-ar {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+.villas-tab-nav .tab-btn.active, .villas-tab-nav .tab-btn:hover {
+  background: rgba(212, 175, 55, 0.12);
+  border-color: var(--gold-primary);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+}
+
+.villa-showcase-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 3rem;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+  align-items: center;
+}
+
+.render-box {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+}
+.render-img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  display: block;
+}
+
+.status-ribbon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(16, 185, 129, 0.85);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(8px);
+}
+
+/* Markers */
+.interactive-marker-tag {
+  position: absolute;
+  cursor: pointer;
+}
+.marker-pool {
+  bottom: 25%;
+  right: 35%;
+}
+.marker-living {
+  top: 40%;
+  left: 28%;
+}
+.pulse-ring {
+  display: block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--gold-primary);
+  box-shadow: 0 0 0 rgba(212, 175, 55, 0.6);
+  animation: pulse-glow 2s infinite;
+}
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+  70% { box-shadow: 0 0 0 16px rgba(212, 175, 55, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+}
+.marker-tooltip {
+  position: absolute;
+  bottom: 30px;
+  right: 50%;
+  transform: translateX(50%);
+  background: rgba(7, 10, 15, 0.95);
+  border: 1px solid var(--border-gold);
+  color: var(--text-primary);
+  font-size: 0.78rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.interactive-marker-tag:hover .marker-tooltip {
+  opacity: 1;
+}
+
+.specs-header .unit-code {
+  font-family: var(--font-en);
+  font-size: 0.8rem;
+  color: var(--gold-primary);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+.specs-header .unit-name {
+  font-size: 1.85rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+.specs-header .unit-desc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
+}
+
+.specs-data-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+.data-cell {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+}
+.data-cell .cell-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0.2rem;
+}
+.data-cell .cell-val {
+  font-size: 1rem;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.villa-amenities-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+.villa-amenities-tags span {
+  font-size: 0.82rem;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  color: var(--gold-light);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+}
+
+.villa-pricing-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 1.5rem;
+  gap: 1.5rem;
+}
+.price-box .price-label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+.price-box .price-amount {
+  font-family: var(--font-arabic);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--gold-light);
+}
+.price-box .price-note {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Ambiance Simulator Section
+   ========================================================================== */
+.ambiance-simulator-section {
+  padding: 5rem 0;
+}
+.ambiance-box-glass {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+.ambiance-info h2 {
+  font-size: 2.1rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.35;
+}
+.ambiance-info p {
+  color: var(--text-secondary);
+  font-size: 0.98rem;
+  margin-bottom: 2rem;
+}
+
+.ambiance-switch-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.ambiance-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  text-align: right;
+  font-family: var(--font-arabic);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.ambiance-btn .icon {
+  font-size: 1.5rem;
+}
+.ambiance-btn strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+.ambiance-btn small {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+.ambiance-btn.active, .ambiance-btn:hover {
+  background: rgba(212, 175, 55, 0.12);
+  border-color: var(--gold-primary);
+}
+.ambiance-btn.active strong {
+  color: var(--gold-light);
+}
+
+.preview-canvas-wrap {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-gold);
+}
+.ambiance-img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.4s ease;
+}
+.live-clock-badge {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: rgba(7, 10, 15, 0.85);
+  border: 1px solid var(--border-gold);
+  color: var(--gold-light);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(8px);
+}
+
+/* ==========================================================================
+   Investment & Mortgage Live Calculator
+   ========================================================================== */
+.calculator-section {
+  padding: 6rem 0;
+  background: linear-gradient(180deg, #0b1019 0%, var(--bg-primary) 100%);
+}
+
+.calc-container-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 2.5rem;
+}
+
+.calc-controls-card, .calc-results-card {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+.card-subtitle {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--gold-light);
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 0.85rem;
+}
+
+.slider-group {
+  margin-bottom: 2rem;
+}
+.slider-label-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.65rem;
+  font-size: 0.92rem;
+}
+.highlight-val {
+  color: var(--gold-primary);
+  font-weight: 700;
+  font-family: var(--font-arabic);
+}
+
+.gold-slider {
+  width: 100%;
+  height: 6px;
+  border-radius: 4px;
+  background: #1f2937;
+  outline: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+.gold-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--gold-gradient);
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
+  border: 2px solid #070a0f;
+}
+.range-limits {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.4rem;
+}
+
+.developer-guarantee-note {
+  background: rgba(212, 175, 55, 0.06);
+  border: 1px dashed var(--border-gold);
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  color: var(--gold-light);
+  text-align: center;
+}
+
+/* Results Column */
+.result-highlight-box.primary {
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.result-highlight-box .res-title {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--gold-light);
+  margin-bottom: 0.35rem;
+}
+.result-highlight-box .res-number {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #fff;
+  font-family: var(--font-arabic);
+  line-height: 1.2;
+}
+.result-highlight-box .res-sub {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+
+.results-stats-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.stat-pill {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 1.1rem;
+}
+.stat-pill .st-lbl {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+.stat-pill .st-val {
+  display: block;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--gold-primary);
+  font-family: var(--font-arabic);
+}
+.stat-pill .st-sub {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Amenities Grid
+   ========================================================================== */
+.amenities-section {
+  padding: 6rem 0;
+}
+.amenities-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+.amenity-card {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  transition: all var(--transition-fast);
+}
+.amenity-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-gold);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+.amenity-icon {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+.amenity-card h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.65rem;
+  color: var(--text-primary);
+}
+.amenity-card p {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+/* ==========================================================================
+   VIP Appointment Booking & WhatsApp Pass
+   ========================================================================== */
+.vip-booking-section {
+  padding: 6rem 0;
+  position: relative;
+}
+.vip-booking-card-glass {
+  background: linear-gradient(135deg, rgba(22, 30, 46, 0.95) 0%, rgba(13, 19, 30, 0.95) 100%);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-lg);
+  padding: 3.5rem 3rem;
+  max-width: 860px;
+  margin-inline: auto;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), 0 0 50px var(--gold-glow);
+}
+.crown-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+.vip-booking-header h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.85rem;
+}
+.vip-booking-header p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  max-width: 640px;
+  margin-inline: auto;
+  margin-bottom: 2.5rem;
+}
+
+.vip-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--gold-light);
+  margin-bottom: 0.45rem;
+  font-weight: 600;
+}
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 0.85rem 1.15rem;
+  background: rgba(7, 10, 15, 0.6);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: var(--font-arabic);
+  font-size: 0.92rem;
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+.form-group input:focus, .form-group select:focus {
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+.checkbox-group {
+  margin: 1.75rem 0 2rem;
+}
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+.custom-checkbox input {
+  accent-color: var(--gold-primary);
+  width: 18px;
+  height: 18px;
+}
+
+.form-submit-row {
+  margin-bottom: 1.25rem;
+}
+.btn-glow {
+  box-shadow: 0 6px 30px rgba(212, 175, 55, 0.4);
+}
+.privacy-notice {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   VIP Modal Pass
+   ========================================================================== */
+.vip-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  padding: 1.5rem;
+}
+.vip-modal.open {
+  opacity: 1;
+  visibility: visible;
+}
+.vip-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 7, 11, 0.85);
+  backdrop-filter: blur(12px);
+}
+.vip-modal-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  background: #0f1622;
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  z-index: 1;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.8), 0 0 40px var(--gold-glow);
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+.vip-modal.open .vip-modal-dialog {
+  transform: scale(1);
+}
+.modal-close-btn {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.modal-close-btn:hover {
+  color: #fff;
+}
+
+.vip-pass-card {
+  text-align: center;
+}
+.gold-seal {
+  display: inline-block;
+  padding: 0.3rem 0.9rem;
+  background: var(--gold-gradient);
+  color: #070a0f;
+  font-family: var(--font-en);
+  font-weight: 800;
+  font-size: 0.75rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.75rem;
+  letter-spacing: 1.5px;
+}
+.pass-header h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+}
+.pass-id {
+  font-family: var(--font-en);
+  font-size: 0.85rem;
+  color: var(--gold-light);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.pass-body {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed var(--border-gold);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+  text-align: right;
+}
+.pass-client-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 0.5rem;
+}
+.pass-details-list div {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+}
+.pass-details-list span {
+  color: var(--text-muted);
+}
+.pass-footer p {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.estate-footer {
+  background: #040609;
+  border-top: 1px solid rgba(212, 175, 55, 0.15);
+  padding: 4.5rem 0 2rem;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr;
+  gap: 3.5rem;
+  margin-bottom: 3.5rem;
+}
+.footer-brand .ar {
+  font-size: 1.35rem;
+  font-weight: 800;
+  display: block;
+}
+.footer-brand .en {
+  font-family: var(--font-en);
+  font-size: 0.75rem;
+  color: var(--gold-primary);
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+.footer-col p {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+.legal-note {
+  font-size: 0.75rem;
+  color: #556987;
+  margin-top: 1rem;
+}
+.footer-col h5 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.1rem;
+}
+.footer-col ul {
+  list-style: none;
+}
+.footer-col ul li {
+  margin-bottom: 0.6rem;
+}
+.footer-col ul a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.2s;
+}
+.footer-col ul a:hover {
+  color: var(--gold-light);
+}
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 2rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+@media (max-width: 992px) {
+  .hero-content-grid,
+  .villa-showcase-grid,
+  .ambiance-box-glass,
+  .calc-container-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .estate-nav, .header-cta-group {
+    display: none;
+  }
+  .mobile-toggle {
+    display: flex;
+  }
+  .estate-nav.mobile-active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #090e16;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-gold);
+    gap: 1rem;
+  }
+  .amenities-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-headline {
+    font-size: 2.1rem;
+  }
+  .estate-metrics-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .estate-metrics-bar .divider {
+    display: none;
+  }
+  .amenities-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .vip-booking-card-glass {
+    padding: 2rem 1.25rem;
+  }
+  .vip-form .form-row {
+    grid-template-columns: 1fr;
+  }
+  .results-stats-duo {
+    grid-template-columns: 1fr;
+  }
+  .villa-pricing-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .specs-data-grid {
+    grid-template-columns: 1fr;
+  }
+}
